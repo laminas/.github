@@ -8,12 +8,14 @@ Pick the target branch based on the following criteria:
   * New feature, or refactor of existing code: develop branch
 -->
 
-|    Q        |   A
-|------------ | ------
-| Bugfix      | yes/no
-| BC Break    | yes/no
-| New Feature | yes/no
-| RFC         | yes/no
+|    Q          |   A
+|-------------- | ------
+| Documentation | yes/no
+| Bugfix        | yes/no
+| BC Break      | yes/no
+| New Feature   | yes/no
+| RFC           | yes/no
+| QA            | yes/no
 
 ### Description
 
