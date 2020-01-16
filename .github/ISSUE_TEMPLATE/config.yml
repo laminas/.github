@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ❓ Support Question
+    url: https://laminas.dev/chat/
+    about: 'This repository is only for reporting bugs and suggesting features. Support is provided via chat and forums:'
+  - name: 💡 Feedback Wanted
+    url: https://discourse.laminas.dev
+    about: 'Discuss and get feedback on ideas on our forums:'
