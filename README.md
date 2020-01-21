@@ -11,7 +11,6 @@ In particular:
   - [ISSUE_TEMPLATE/BC_Break.md](.github/ISSUE_TEMPLATE/BC_Break.md)
   - [ISSUE_TEMPLATE/Bug.md](.github/ISSUE_TEMPLATE/Bug.md)
   - [ISSUE_TEMPLATE/Feature_Request.md](.github/ISSUE_TEMPLATE/Feature_Request.md)
-  - [ISSUE_TEMPLATE/Support_Question.md](.github/ISSUE_TEMPLATE/Support_Question.md)
   - [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)
   - [SECURITY.md](SECURITY.md)
   - [SUPPORT.md](SUPPORT.md)
