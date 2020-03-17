@@ -1,11 +1,17 @@
 <!--
 Fill in the relevant information below to help triage your issue.
+
 Pick the target branch based on the following criteria:
   * Documentation improvement: master branch
   * Bugfix: master branch
   * QA improvement (additional tests, CS fixes, etc.) that does not change code
     behavior: master branch
   * New feature, or refactor of existing code: develop branch
+
+You MUST provide a signoff in your commits for us to be able to accept your
+patch; you can do this by providing either the --signoff or -s flag when using
+"git commit". Please see the project contributing guide and
+https://developercertificate.org for details.
 -->
 
 |    Q          |   A

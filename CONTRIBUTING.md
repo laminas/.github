@@ -129,8 +129,20 @@ Switched to a new branch 'hotfix/9295'
 
 
 ```console
-$ git commit
+$ git commit -s
 ```
+
+> ### About the -s flag
+>
+> In order for us to accept your patches, you must provide a signoff in all
+> commits; this is done by using the `-s` or `--signoff` option when calling
+> `git commit`. The signoff is used to certify that you have rights to submit
+> your patch under the project's license, and that you agree to the [Developer
+> Certificate of Origin](https://developercertificate.org).
+>
+> You can automate inclusion of the `-s` or `--signoff` option by creating a
+> local alias with the command `git config alias.commit "commit -s"`. (If you
+> use an alias such as `ci` normally, create an equivalent alias.)
 
 ... write your log message ...
 
