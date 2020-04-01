@@ -134,18 +134,10 @@ $ git commit -s
 
 > ### About the -s flag
 >
-> In order for us to accept your patches, you must provide a signoff in all
-> commits; this is done by using the `-s` or `--signoff` option when calling
-> `git commit`. The signoff is used to certify that you have rights to submit
-> your patch under the project's license, and that you agree to the [Developer
-> Certificate of Origin](https://developercertificate.org).
->
-> You can automate inclusion of the `-s` or `--signoff` option by creating a
-> local alias with the command `git config alias.commit "commit -s"`. (If you
-> use an alias such as `ci` normally, create an equivalent alias.)
+> See the [section on commit signoffs](#commit-signoffs) below for more details
+> on the `-s` option to `git commit` and why we require it.
 
 ... write your log message ...
-
 
 ```console
 $ git push {username} hotfix/9295:hotfix/9295
@@ -194,3 +186,86 @@ repository, we suggest doing some cleanup of these branches.
   ```console
   $ git push {username} :<branchname>
   ```
+
+## Commit Signoffs
+
+In order for us to accept your patches, you must provide a signoff in all
+commits; this is done by using the `-s` or `--signoff` option when calling `git
+commit`. The signoff is used to certify that you have rights to submit your
+patch under the project's license, and that you agree to the [Developer
+Certificate of Origin](https://developercertificate.org).
+
+### Automating signoffs
+
+You can automate adding your signoff by using a commit template that includes
+the line:
+
+```text
+Signed-off-by: Your Name <your.email@example.com>
+```
+
+Put that line into a file, and then run the command:
+
+```console
+git config commit.template {path to file}
+```
+
+If you want to use this template everywhere, pass the `--global` option to
+`git config`.
+
+### Adding signoffs when committing from the GitHub website
+
+You can add a signoff manually when committing from the GitHub website by adding
+the line `Signed-off-by: Your Name <your.email@example.org>` by itself in the
+commit message.
+
+### Adding signoffs after-the-fact
+
+If you have forgotten signoff your commits, you can do so as follows:
+
+- Determine the number of commits you have made.
+- Run `git rebase -i HEAD~{number you discovered}`
+- Mark each commit listed to "reword" (prefix the line with `reword ` or `r `).
+
+`git` will now re-run each commit, putting you into an editor with the commit
+message. Append a new line to the message with the contents:
+
+```text
+Signed-off-by: Your Name <your.email@example.org>
+```
+
+and then save and exit. `git` will do this once for each commit.
+
+When done, execute `git push -f`, specifying the correct remote and branch, in
+order to force-push your amendments.
+
+### Obvious Fix Policy
+
+Small contributions, such as fixing spelling errors, where the content is small
+enough to not be considered intellectual property, can be submitted without
+signing the contribution for the DCO.
+
+As a rule of thumb, changes are obvious fixes if they do not introduce any new
+functionality or creative thinking. Assuming the change does not affect
+functionality, some common obvious fix examples include the following:
+
+- Spelling / grammar fixes.
+- Typo correction, white space, and formatting changes.
+- Comment clean up.
+- Bug fixes that change default return values or error codes stored in
+  constants.
+- Adding or changing exception messages.
+- Changes to 'metadata' files like `.gitignore`, `composer.json`, etc.
+- Moving source files from one directory to another.
+
+Whenever you invoke the "obvious fix" rule, please say so in your commit message:
+
+```text
+commit 87b503f5e190e13359d4abb3e2fccd04e949d8df
+Author: I.M. Developer <imdeveloper@getlaminas.org>
+Date:   Wed Apr 01 14:46:40 2020 -0500
+
+  Fix typo in the README.
+
+  Obvious fix.
+```
