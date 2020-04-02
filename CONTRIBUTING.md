@@ -221,20 +221,27 @@ commit message.
 
 ### Adding signoffs after-the-fact
 
-If you have forgotten signoff your commits, you can do so as follows:
+If you have forgotten to signoff your commits, you have two options. For both,
+the first step is determining the number of commits you have made in your patch.
+On Unix-like systems (Linux, BSD, OSX, WSL, etc.), this is generally
+accomplished via:
 
-- Determine the number of commits you have made.
-- Run `git rebase -i HEAD~{number you discovered}`
-- Mark each commit listed to "reword" (prefix the line with `reword ` or `r `).
-
-`git` will now re-run each commit, putting you into an editor with the commit
-message. Append a new line to the message with the contents:
-
-```text
-Signed-off-by: Your Name <your.email@example.org>
+```console
+git log --oneline {original branch}..HEAD | wc -l
 ```
 
-and then save and exit. `git` will do this once for each commit.
+From there, choose either to only signoff, or perform an interactive rebase:
+
+- Signoff only: run `git rebase --signoff HEAD~{number you discovered}`
+
+- Full interactive rebase: run `git rebase -i HEAD~{number you discovered} -x
+  "git commit --amend --signoff --no-edit"`.  This will present the standard
+  interactive rebase screen, but include the line `exec git commit --amend
+  --signoff --no-edit` between each commit.  Leave those lines after each commit
+  you will be keeping.
+
+If you run into issues during a rebase operation, you can generally execute `git
+rebase --abort` to return to the original state.
 
 When done, execute `git push -f`, specifying the correct remote and branch, in
 order to force-push your amendments.
