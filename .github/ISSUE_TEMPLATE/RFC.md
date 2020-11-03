@@ -13,7 +13,6 @@ labels: RFC
 | ------------------- | ------ |
 | Proposed Version(s) | x.y.0  |
 | BC Break?           | Yes/No |
-| Date of proposal    | Y-m-d  |
 
 ### Goal
 
