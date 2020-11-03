@@ -1,6 +1,7 @@
 ---
 name: RFC
 about: Propose new feature(s) or major changes to the component
+labels: RFC
 ---
 
 ## RFC
