@@ -1,6 +1,7 @@
 ---
 name: 🐞 Bug Report
 about: Something is broken? 🔨
+labels: Bug
 ---
 
 ### Bug Report

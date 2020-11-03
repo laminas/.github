@@ -1,6 +1,7 @@
 ---
 name: 🎉 Feature Request
 about: You have an idea or feature that should be implemented? 🎩
+labels: Enhancement
 ---
 
 ### Feature Request
