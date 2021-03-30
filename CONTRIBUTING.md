@@ -8,6 +8,7 @@ If you wish to contribute to this project, please be sure to read/subscribe to t
 - [Forums](https://discourse.laminas.dev/c/contributors)
 - [Chat](https://laminas.dev/chat)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Repository template](https://github.com/laminas/repo-template)
 
 If you are working on new features or refactoring, [create a proposal](./issues/new?labels=RFC&template=RFC.md&title=%5BRFC%5D%3A+%5BTITLE+OF+RFC%5D).
 
@@ -184,6 +185,13 @@ Once you know that your changes have been accepted to the canonical repository, 
   ```console
   $ git push fork :<branchname>
   ```
+
+## Current repository standards and configuration
+
+To get an overview of which current standards and configurations should be used for the components, 
+it is recommended to look in the [Repository template](https://github.com/laminas/repo-template). 
+
+There you will also find the latest information on QA tooling.
 
 ## Contributing Documentation
 
