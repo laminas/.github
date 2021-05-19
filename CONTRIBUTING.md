@@ -282,7 +282,7 @@ The reasons for this include:
 
 We do not want to waste either maintainer or contributor time, so coordinating such changes, while it may seem like an extra step, can save everybody time and effort in the long run.
 
-If you are unsure whether to start pushing patches to all repositories, please open an agenda item for the next TSC meeting.
+If you are unsure whether to start pushing patches to all repositories, please [open an RFC with the Technical Steering Committee](https://github.com/laminas/technical-steering-committee/issues/new).
 If you need assistance doing so, ask in the #contributors channel.
 
 [MkDocs]: https://www.mkdocs.org/
