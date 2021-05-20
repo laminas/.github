@@ -264,5 +264,26 @@ Date:   Wed Apr 01 14:46:40 2020 -0500
   Obvious fix.
 ```
 
+## Mass contributions
+
+Occasionally, a patch or set of changes may need to be propagated to multiple repositories/packages.
+As some past examples:
+
+- Rolling out the GitHub Actions automatic-releases workflow.
+- Rolling out the GitHub Actions continuous-integration workflow.
+- Updating repositories to laminas-coding-standard (or a later revision of laminas-coding-standard).
+
+In all such cases, contributors MUST get approval from the [Technical Steering Committee](https://github.com/laminas/technical-steering-committee) PRIOR to submitting the patches.
+The reasons for this include:
+
+- Ensuring no duplication of effort occurs.
+- Ensuring the changes have been discussed and approved by the TSC.
+- Ensuring there will be maintainers available to review and merge the patches.
+
+We do not want to waste either maintainer or contributor time, so coordinating such changes, while it may seem like an extra step, can save everybody time and effort in the long run.
+
+If you are unsure whether to start pushing patches to all repositories, please [open an RFC with the Technical Steering Committee](https://github.com/laminas/technical-steering-committee/issues/new).
+If you need assistance doing so, ask in the #contributors channel.
+
 [MkDocs]: https://www.mkdocs.org/
 [Markdown format]: https://www.markdownguide.org/
