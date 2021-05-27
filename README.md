@@ -6,13 +6,13 @@ organization.
 In particular:
 
 - Community Health Files:
-  - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-  - [CONTRIBUTING.md](CONTRIBUTING.md)
-  - [ISSUE_TEMPLATE/BC_Break.md](.github/ISSUE_TEMPLATE/BC_Break.md)
-  - [ISSUE_TEMPLATE/Bug.md](.github/ISSUE_TEMPLATE/Bug.md)
-  - [ISSUE_TEMPLATE/Feature_Request.md](.github/ISSUE_TEMPLATE/Feature_Request.md)
-  - [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)
-  - [SECURITY.md](SECURITY.md)
-  - [SUPPORT.md](SUPPORT.md)
+  - [Backwards Compatibility Break Template](.github/ISSUE_TEMPLATE/BC_Break.md)
+  - [Bug Template](.github/ISSUE_TEMPLATE/Bug.md)
+  - [Code of Conduct](CODE_OF_CONDUCT.md)
+  - [Contributing Guidelines](CONTRIBUTING.md)
+  - [Feature Request Template](.github/ISSUE_TEMPLATE/Feature_Request.md)
+  - [Getting Support](SUPPORT.md)
+  - [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md)
+  - [Security Policy](SECURITY.md)
 - Travis Build Templates:
   - [Supported PHP versions build template](travis/supported.yml)
