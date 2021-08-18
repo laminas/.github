@@ -160,6 +160,50 @@ You can also perform the same steps via the [GitHub CLI tool](https://cli.github
 Execute `gh pr create`, and step through the dialog to create the pull request.
 If the branch you will submit against is not the default branch, use the `-B {branch}` option to specify the branch to create the patch against.
 
+#### Performing assertions on the code
+
+We distinguish assertions in two categories:
+
+1. Expectations of something that is always supposed to be true
+1. Expectations of some input to follow some rule
+
+The former is a development-only concern, aiming to aid tools (e.g. IDEs, static analysis) to perform a more accurate type detection.
+In this scenario, you should use the [`assert()`](https://www.php.net/manual/en/function.assert.php) function, which executes the expression when [`zend.assertions`](https://www.php.net/manual/en/ini.core.php#ini.zend.assertions) is enabled.
+That will make sure that the condition is valid, while easing future refactoring.
+
+The latter is something that must be executed regardless of configuration or environment.
+These expectations should be configured using the class [`Webmozart\Assert\Assert`](https://github.com/webmozarts/assert), which provides an extensive list of helpful methods for input validation.
+Please make sure to add a helpful message to be used when the assertion fails.
+
+Example:
+
+```php
+<?php
+declare(strict_types=true);
+
+namespace Laminas\Examples;
+
+use Psr\Container\ContainerInterface;
+use Webmozart\Assert\Assert;
+
+$container = require __DIR__ . '/../config/di-container.php';
+// we know that the file above ALWAYS returns an instance of this type
+\assert($container instanceof ContainerInterface);
+
+// now we can call `ContainerInterface#get()`, which will be understood by psalm and even autocompleted by PHPStorm
+$app = $container->get(MyApp::class);
+
+// we cannot always rely that the `MyApp::class` service is indeed an instance of that class, hence an assertion
+// that guards it despite the environment
+Assert::isInstanceOf(
+    $app,
+    MyApp::class,
+    'It looks like the DI container is misconfigured, please verify the service ' . MyApp::class
+);
+
+$app->run();
+```
+
 #### What branch to issue the pull request against?
 
 Which branch should you issue a pull request against?
