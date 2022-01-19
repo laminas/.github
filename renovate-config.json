@@ -10,7 +10,6 @@
         ":rebaseStalePrs",
         ":separateMajorReleases",
         ":combinePatchMinorReleases",
-        ":maintainLockFilesWeekly",
         ":enableVulnerabilityAlerts",
         ":timezone(UTC)",
         ":label(renovate)",
@@ -19,7 +18,7 @@
         "github>whitesource/merge-confidence:beta"
     ],
     "enabledManagers": ["composer"],
-    "lockFileMaintenance": {"extends": ["schedule:nonOfficeHours"]},
+    "lockFileMaintenance": {"enabled": true, "extends": ["schedule:nonOfficeHours"]},
     "platformAutomerge": true,
     "rangeStrategy": "widen",
     "rollbackPrs": true,
