@@ -17,6 +17,7 @@
         "schedule:nonOfficeHours",
         "github>whitesource/merge-confidence:beta"
     ],
+    "constraints": {"php": "^7.4"},
     "enabledManagers": ["composer"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:nonOfficeHours"]},
     "platformAutomerge": true,
