@@ -20,7 +20,7 @@ containing a basic `renovate.json` file with the following contents:
 ```json
 {
     "extends": [
-        "github>laminas/.github:renovate-config"
+        "local>laminas/.github:renovate-config"
     ]
 }
 ```
