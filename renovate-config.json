@@ -13,11 +13,11 @@
         ":combinePatchMinorReleases",
         ":enableVulnerabilityAlerts",
         ":timezone(UTC)",
+        ":gitSignOff",
         ":label(renovate)",
         "group:allNonMajor",
         "schedule:daily"
     ],
-    "commitMessageSuffix": "\n\nSigned-off-by: Renovate Bot <bot@renovateapp.com>",
     "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
     "platformAutomerge": true,

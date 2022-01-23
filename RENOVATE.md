@@ -58,6 +58,7 @@ possible presets have been chosen.
     ":combinePatchMinorReleases",
     ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
+    ":gitSignOff",
     ":label(renovate)",
     "group:allNonMajor",
     "schedule:daily",
@@ -86,6 +87,7 @@ minor releases for a single package will be combined to a single update.
 should the repository have any vulnerability alerts (see below).
 **[:timezone(UTC)](https://docs.renovatebot.com/presets-default/#timezonearg0)** - Not strictly necessary but ensures
 schedules use the UTC timezone.
+**[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed off.
 **[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
 **[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
 grouped into a single update.
@@ -111,7 +113,6 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 ### Other Settings
 
 ```json
-"commitMessageSuffix": "\n\nSigned-off-by: Renovate Bot <bot@renovateapp.com>",
 "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
 "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
 "platformAutomerge": true,
@@ -120,7 +121,6 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "rollbackPrs": true,
 ```
 
-**[commitMessageSuffix](https://docs.renovatebot.com/configuration-options/#commitmessagesuffix)** - DCO requires all commits to be signed off.
 **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
 enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc) are also
 available.
