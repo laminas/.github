@@ -111,6 +111,7 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 ### Other Settings
 
 ```json
+"commitMessageSuffix": "\n\nSigned-off-by: Renovate Bot <bot@renovateapp.com>",
 "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
 "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
 "platformAutomerge": true,
@@ -119,6 +120,7 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "rollbackPrs": true,
 ```
 
+**[commitMessageSuffix](https://docs.renovatebot.com/configuration-options/#commitmessagesuffix)** - DCO requires all commits to be signed off.
 **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
 enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc) are also
 available.
