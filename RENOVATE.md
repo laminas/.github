@@ -110,6 +110,7 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 ### Other Settings
 
 ```json
+"commitBodyTable": true,
 "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
 "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
 "platformAutomerge": true,
@@ -118,6 +119,8 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "rollbackPrs": true,
 ```
 
+**[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the commit
+message describing all updates in the commit.
 **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
 enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc) are also
 available.
