@@ -16,6 +16,7 @@
         ":label(renovate)",
         "group:allNonMajor"
     ],
+    "commitBodyTable": true,
     "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
     "platformAutomerge": true,
