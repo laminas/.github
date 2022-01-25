@@ -2,7 +2,6 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "description": "Default configuration for repositories in the Laminas organisation",
     "extends": [
-        ":enableRenovate",
         ":dependencyDashboard",
         ":ignoreModulesAndTests",
         ":automergeMinor",
