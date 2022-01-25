@@ -47,7 +47,6 @@ possible presets have been chosen.
 
 ```json
 "extends": [
-    ":enableRenovate",
     ":dependencyDashboard",
     ":ignoreModulesAndTests",
     ":automergeMinor",
@@ -65,8 +64,6 @@ possible presets have been chosen.
 ],
 ```
 
-**[:enableRenovate](https://docs.renovatebot.com/presets-default/#enablerenovate)** - Enables Renovate to be used on the
-repository.
 **[:dependencyDashboard](https://docs.renovatebot.com/presets-default/#dependencydashboard)** - This will open a
 persistent issue in each repository to allow easy tracking of all Renovate updates.
 **[:ignoreModulesAndTests](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests)** - This ensures
