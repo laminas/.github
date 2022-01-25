@@ -14,8 +14,7 @@
         ":timezone(UTC)",
         ":gitSignOff",
         ":label(renovate)",
-        "group:allNonMajor",
-        "schedule:daily"
+        "group:allNonMajor"
     ],
     "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},

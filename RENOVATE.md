@@ -60,7 +60,6 @@ possible presets have been chosen.
     ":gitSignOff",
     ":label(renovate)",
     "group:allNonMajor",
-    "schedule:daily",
 ],
 ```
 
@@ -88,8 +87,6 @@ schedules use the UTC timezone.
 **[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
 **[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
 grouped into a single update.
-**[schedule:daily](https://docs.renovatebot.com/presets-schedule/#scheduledaily)** - Run only once per day (but multiple
-times a run, until everything is updated/rebased).
 
 #### Vulnerability Alerts
 
