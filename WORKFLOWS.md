@@ -14,9 +14,6 @@ on:
   pull_request:
   push:
     branches:
-      - '[0-9]+.[0-9]+.x'
-      - 'refs/pull/*'
-      - 'renovate/*'
     tags:
 
 jobs:
