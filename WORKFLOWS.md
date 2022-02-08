@@ -21,5 +21,5 @@ on:
 
 jobs:
   ci:
-    uses: laminas/.github/workflows/continuous-integration.yml@ci-v1
+    uses: laminas/.github/.github/workflows/continuous-integration.yml@ci-v1
 ```
