@@ -2,10 +2,10 @@
 Fill in the relevant information below to help triage your issue.
 
 Pick the target branch based on the following criteria:
-  * Documentation improvement: master branch
-  * Bugfix: master branch
+  * Documentation improvement: default X.Y.z branch or the oldest support X.Y.z
+  * Bugfix: default X.Y.z branch or the oldest support X.Y.z
   * QA improvement (additional tests, CS fixes, etc.) that does not change code
-    behavior: master branch
+    behavior: default X.Y.z branch or the oldest support X.Y.z
   * New feature, or refactor of existing code: develop branch
 
 You MUST provide a signoff in your commits for us to be able to accept your
@@ -31,21 +31,21 @@ Tell us about why this change is necessary:
   - How do you reproduce it?
   - What did you expect to happen?
   - What actually happened?
-  - TARGET THE master BRANCH
+  - TARGET THE default X.Y.z branch or the oldest support X.Y.z
 
 - Are you adding documentation?
-  - TARGET THE master BRANCH
+  - TARGET THE default X.Y.z branch or the oldest support X.Y.z
 
 - Are you providing a QA improvement (additional tests, CS fixes, etc.) that
   does not change behavior?
   - Explain why the changes are necessary
-  - TARGET THE master BRANCH
+  - TARGET THE default X.Y.z branch or the oldest support X.Y.z
 
 - Are you fixing a BC Break?
   - How do you reproduce it?
   - What was the previous behavior?
   - What is the current behavior?
-  - TARGET THE master BRANCH
+  - TARGET THE default X.Y.z branch or the oldest support X.Y.z
 
 - Are you adding something the library currently does not support?
   - Why should it be added?
