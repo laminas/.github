@@ -53,13 +53,14 @@ possible presets have been chosen.
     ":automergeBranch",
     ":prNotPending",
     ":rebaseStalePrs",
+    ":semanticCommitsDisabled",
     ":separateMajorReleases",
     ":combinePatchMinorReleases",
     ":enableVulnerabilityAlerts",
     ":timezone(UTC)",
     ":gitSignOff",
     ":label(renovate)",
-    "group:allNonMajor",
+    "group:allNonMajor"
 ],
 ```
 
@@ -75,6 +76,8 @@ merge type to be `branch` meaning a PR is only opened on failure.
 all checks have finished running.
 **[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
 Renovate will be automatically rebased should they fall behind.
+**[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled) - Disable semantic
+prefixes for commit messages and PR titles.
 **[:separateMajorReleases](https://docs.renovatebot.com/presets-default/#separatemajorreleases)** - Any new major
 releases for a package will be separated into its own update.
 **[:combinePatchMinorReleases](https://docs.renovatebot.com/presets-default/#combinepatchminorreleases)** - Patch and
