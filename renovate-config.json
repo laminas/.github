@@ -8,6 +8,7 @@
         ":automergeBranch",
         ":prNotPending",
         ":rebaseStalePrs",
+        ":semanticCommitsDisabled",
         ":separateMajorReleases",
         ":combinePatchMinorReleases",
         ":enableVulnerabilityAlerts",
