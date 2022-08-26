@@ -117,6 +117,7 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
 "rangeStrategy": "replace",
 "rollbackPrs": true,
+"vulnerabilityAlerts": {"rangeStrategy": "bump}
 ```
 
 **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the commit
@@ -134,6 +135,7 @@ to any PR opened by Renovate.
 ensures that PRs are only created once the new release falls outside the version constraints inside `composer.json`.
 **[rollbackPrs](https://docs.renovatebot.com/configuration-options/#rollbackprs)** - A rare occurrence, but should a
 package become revoked, a PR to downgrade the package will be created.
+**[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that `composer.json` files are updated also.
 
 ### Package Rules
 
