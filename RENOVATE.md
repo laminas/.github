@@ -64,31 +64,31 @@ possible presets have been chosen.
 ],
 ```
 
-**[:dependencyDashboard](https://docs.renovatebot.com/presets-default/#dependencydashboard)** - This will open a
+- **[:dependencyDashboard](https://docs.renovatebot.com/presets-default/#dependencydashboard)** - This will open a
 persistent issue in each repository to allow easy tracking of all Renovate updates.
-**[:ignoreModulesAndTests](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests)** - This ensures
+- **[:ignoreModulesAndTests](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests)** - This ensures
 Renovate does not try to update `composer.json` inside `tests/`, `vendor/` etc.
-**[:automergeMinor](https://docs.renovatebot.com/presets-default/#automergeminor)** - Automatically merge non-major
+- **[:automergeMinor](https://docs.renovatebot.com/presets-default/#automergeminor)** - Automatically merge non-major
 updates of updates by default.
-**[:automergeBranch](https://docs.renovatebot.com/presets-default/#automergebranch)** - But set the default automatic
+- **[:automergeBranch](https://docs.renovatebot.com/presets-default/#automergebranch)** - But set the default automatic
 merge type to be `branch` meaning a PR is only opened on failure.
-**[:prNotPending](https://docs.renovatebot.com/presets-default/#prnotpending)** - PRs will also only be created AFTER
+- **[:prNotPending](https://docs.renovatebot.com/presets-default/#prnotpending)** - PRs will also only be created AFTER
 all checks have finished running.
-**[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
+- **[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
 Renovate will be automatically rebased should they fall behind.
-**[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled) - Disable semantic
+- **[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled) - Disable semantic
 prefixes for commit messages and PR titles.
-**[:separateMajorReleases](https://docs.renovatebot.com/presets-default/#separatemajorreleases)** - Any new major
+- **[:separateMajorReleases](https://docs.renovatebot.com/presets-default/#separatemajorreleases)** - Any new major
 releases for a package will be separated into its own update.
-**[:combinePatchMinorReleases](https://docs.renovatebot.com/presets-default/#combinepatchminorreleases)** - Patch and
+- **[:combinePatchMinorReleases](https://docs.renovatebot.com/presets-default/#combinepatchminorreleases)** - Patch and
 minor releases for a single package will be combined to a single update.
-**[:enableVulnerabilityAlerts](https://docs.renovatebot.com/presets-default/#enablevulnerabilityalerts)** - Open a PR
+- **[:enableVulnerabilityAlerts](https://docs.renovatebot.com/presets-default/#enablevulnerabilityalerts)** - Open a PR
 should the repository have any vulnerability alerts (see below).
-**[:timezone(UTC)](https://docs.renovatebot.com/presets-default/#timezonearg0)** - Not strictly necessary but ensures
+- **[:timezone(UTC)](https://docs.renovatebot.com/presets-default/#timezonearg0)** - Not strictly necessary but ensures
 schedules use the UTC timezone.
-**[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed off.
-**[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
-**[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
+- **[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed off.
+- **[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
+- **[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
 grouped into a single update.
 
 #### Vulnerability Alerts
@@ -120,22 +120,22 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "vulnerabilityAlerts": {"rangeStrategy": "bump"}
 ```
 
-**[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the commit
+- **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the commit
 message describing all updates in the commit.
-**[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
+- **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
 enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc) are also
 available.
-**[lockFileMaintenance](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance)** - Lockfile
+- **[lockFileMaintenance](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance)** - Lockfile
 maintenance should be performed during the scheduled run.
-**[platformAutomerge](https://docs.renovatebot.com/configuration-options/#platformautomerge)** - Use GitHub's merging
+- **[platformAutomerge](https://docs.renovatebot.com/configuration-options/#platformautomerge)** - Use GitHub's merging
 features, falling back to Renovate's own merging methods.
-**[prFooter](https://docs.renovatebot.com/configuration-options/#prfooter)** - The text here will be set as the footer
+- **[prFooter](https://docs.renovatebot.com/configuration-options/#prfooter)** - The text here will be set as the footer
 to any PR opened by Renovate. 
-**[rangeStrategy](https://docs.renovatebot.com/configuration-options/#rangestrategy)** - Setting this to `replace`
+- **[rangeStrategy](https://docs.renovatebot.com/configuration-options/#rangestrategy)** - Setting this to `replace`
 ensures that PRs are only created once the new release falls outside the version constraints inside `composer.json`.
-**[rollbackPrs](https://docs.renovatebot.com/configuration-options/#rollbackprs)** - A rare occurrence, but should a
+- **[rollbackPrs](https://docs.renovatebot.com/configuration-options/#rollbackprs)** - A rare occurrence, but should a
 package become revoked, a PR to downgrade the package will be created.
-**[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that `composer.json` files are updated also.
+- **[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that `composer.json` files are updated also.
 
 ### Package Rules
 
