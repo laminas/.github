@@ -1,0 +1,12 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "Configuration for repositories marked 'security-updates-only' in the Laminas organisation",
+    "extends": [
+        "local>laminas/.github:renovate-config",
+        ":maintainLockFilesDisabled"
+    ],
+    "packageRules": [
+        {"matchPackagePatterns": ["*"], "enabled": false},
+        {"matchPackageNames": ["php"], "enabled": true, "rangeStrategy": "widen"}
+    ]
+}
