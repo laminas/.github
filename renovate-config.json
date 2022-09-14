@@ -6,7 +6,6 @@
         ":ignoreModulesAndTests",
         ":automergeMinor",
         ":automergeBranch",
-        ":prNotPending",
         ":rebaseStalePrs",
         ":semanticCommitsDisabled",
         ":separateMajorReleases",

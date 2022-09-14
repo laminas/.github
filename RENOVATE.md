@@ -51,7 +51,6 @@ possible presets have been chosen.
     ":ignoreModulesAndTests",
     ":automergeMinor",
     ":automergeBranch",
-    ":prNotPending",
     ":rebaseStalePrs",
     ":semanticCommitsDisabled",
     ":separateMajorReleases",
@@ -72,8 +71,6 @@ Renovate does not try to update `composer.json` inside `tests/`, `vendor/` etc.
 updates of updates by default.
 - **[:automergeBranch](https://docs.renovatebot.com/presets-default/#automergebranch)** - But set the default automatic
 merge type to be `branch` meaning a PR is only opened on failure.
-- **[:prNotPending](https://docs.renovatebot.com/presets-default/#prnotpending)** - PRs will also only be created AFTER
-all checks have finished running.
 - **[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
 Renovate will be automatically rebased should they fall behind.
 - **[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled) - Disable semantic
