@@ -30,6 +30,7 @@
         {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "Mezzio packages"}
     ],
     "vulnerabilityAlerts": {
+        "extends": [":automergeDisabled", ":automergePr", ":labels(Awaiting Maintainer Response, security)"],
         "rangeStrategy": "bump"
     }
 }
