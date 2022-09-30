@@ -29,5 +29,8 @@
         {"matchPackagePatterns": ["^laminas-api-tools/"], "groupSlug": "laminas-api-tools", "groupName": "Laminas API Tools packages"},
         {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "Mezzio packages"}
     ],
-    "vulnerabilityAlerts": {"extends": [":automergeDisabled", ":automergePr"], "rangeStrategy": "bump"}
+    "vulnerabilityAlerts": {
+        "extends": [":automergeDisabled", ":automergePr", ":labels(Awaiting Maintainer Response, security)"],
+        "rangeStrategy": "bump"
+    }
 }

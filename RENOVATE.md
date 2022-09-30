@@ -115,7 +115,10 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
 "rangeStrategy": "replace",
 "rollbackPrs": true,
-"vulnerabilityAlerts": {"extends": [":automergeDisabled", ":automergePr"], "rangeStrategy": "bump"}
+"vulnerabilityAlerts": {
+    "extends": [":automergeDisabled", ":automergePr", ":labels(Awaiting Maintainer Response, security)"],
+    "rangeStrategy": "bump"
+}
 ```
 
 - **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the
