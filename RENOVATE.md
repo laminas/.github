@@ -83,7 +83,8 @@ minor releases for a single package will be combined to a single update.
 should the repository have any vulnerability alerts (see below).
 - **[:timezone(UTC)](https://docs.renovatebot.com/presets-default/#timezonearg0)** - Not strictly necessary but ensures
 schedules use the UTC timezone.
-- **[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed off.
+- **[:gitSignOff](https://docs.renovatebot.com/presets-default/#gitsignoff)** - DCO requires all commits to be signed
+off.
 - **[:label(renovate)](https://docs.renovatebot.com/presets-default/#labelarg0)** - Add the label `renovate` to any PRs.
 - **[group:allNonMajor](https://docs.renovatebot.com/presets-group/#groupallnonmajor)** - Any non-major updates will be
 grouped into a single update.
@@ -114,14 +115,14 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
 "rangeStrategy": "replace",
 "rollbackPrs": true,
-"vulnerabilityAlerts": {"rangeStrategy": "bump"}
+"vulnerabilityAlerts": {"extends": [":automergeDisabled", ":automergePr"], "rangeStrategy": "bump"}
 ```
 
-- **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the commit
-message describing all updates in the commit.
+- **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the
+commit message describing all updates in the commit.
 - **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
-enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc) are also
-available.
+enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc.) are
+also available.
 - **[lockFileMaintenance](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance)** - Lockfile
 maintenance should be performed during the scheduled run.
 - **[platformAutomerge](https://docs.renovatebot.com/configuration-options/#platformautomerge)** - Use GitHub's merging
@@ -132,7 +133,9 @@ to any PR opened by Renovate.
 ensures that PRs are only created once the new release falls outside the version constraints inside `composer.json`.
 - **[rollbackPrs](https://docs.renovatebot.com/configuration-options/#rollbackprs)** - A rare occurrence, but should a
 package become revoked, a PR to downgrade the package will be created.
-- **[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that `composer.json` files are updated also.
+- **[vulnerabilityAlerts](https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts)** - Vulnerability
+alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lockfile` by default. This ensures that
+`composer.json` files are updated also, and that manual intervention is required by the maintainer to tag a new minor.
 
 ### Package Rules
 
