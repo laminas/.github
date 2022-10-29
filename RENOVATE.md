@@ -109,7 +109,6 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 
 ```json
 "commitBodyTable": true,
-"enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
 "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
 "platformAutomerge": true,
 "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
@@ -123,9 +122,6 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 
 - **[commitBodyTable](https://docs.renovatebot.com/configuration-options/#commitbodytable)** - Adds a table to the
 commit message describing all updates in the commit.
-- **[enabledManagers](https://docs.renovatebot.com/configuration-options/#enabledmanagers)** - To begin with, this is
-enabled for `composer`, `dockerfile`, `docker-compose` and `github-actions`. Other managers (such as `npm` etc.) are
-also available.
 - **[lockFileMaintenance](https://docs.renovatebot.com/configuration-options/#lockfilemaintenance)** - Lockfile
 maintenance should be performed during the scheduled run.
 - **[platformAutomerge](https://docs.renovatebot.com/configuration-options/#platformautomerge)** - Use GitHub's merging
