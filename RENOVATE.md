@@ -141,6 +141,7 @@ alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lock
 ```json
 "packageRules": [
     {"matchDepTypes": ["require"], "rangeStrategy": "widen"},
+    {"matchDepTypes": ["require-dev"], "rangeStrategy": "bump"},
     {"matchPackagePatterns": ["^laminas/"], "groupSlug": "laminas", "groupName": "all Laminas packages"},
     {"matchPackagePatterns": ["^laminas-api-tools/"], "groupSlug": "laminas-api-tools", "groupName": "all Laminas API Tools packages"},
     {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "all Mezzio packages"},
@@ -154,7 +155,8 @@ alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lock
 ```
 
 The first of these package rules will ensure that non-development dependency version constraints are widened when a
-newer version is available outside them. Widening the range of a development dependency makes little sense.
+newer version is available outside them. Widening the range of a development dependency makes little sense, so a bump
+strategy is used to ensure that development dependencies are kept at the most recent possible minor or patch versions.
  - `replace` Replace the range with a newer one if the new version falls outside it, and update nothing otherwise.
  - `widen` Widen the range with newer one, e.g. `^1.0.0` -> `^1.0.0 || ^2.0.0`.
 

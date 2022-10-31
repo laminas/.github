@@ -24,6 +24,7 @@
     "rollbackPrs": true,
     "packageRules": [
         {"matchDepTypes": ["require"], "rangeStrategy": "widen"},
+        {"matchDepTypes": ["require-dev"], "rangeStrategy": "bump"},
         {"matchPackagePatterns": ["^laminas/"], "groupSlug": "laminas", "groupName": "Laminas packages"},
         {"matchPackagePatterns": ["^laminas-api-tools/"], "groupSlug": "laminas-api-tools", "groupName": "Laminas API Tools packages"},
         {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "Mezzio packages"},
