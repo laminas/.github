@@ -17,7 +17,6 @@
         "group:allNonMajor"
     ],
     "commitBodyTable": true,
-    "enabledManagers": ["composer", "dockerfile", "docker-compose", "github-actions"],
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
     "platformAutomerge": true,
     "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
