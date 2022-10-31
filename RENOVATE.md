@@ -143,7 +143,13 @@ alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lock
     {"matchDepTypes": ["require"], "rangeStrategy": "widen"},
     {"matchPackagePatterns": ["^laminas/"], "groupSlug": "laminas", "groupName": "all Laminas packages"},
     {"matchPackagePatterns": ["^laminas-api-tools/"], "groupSlug": "laminas-api-tools", "groupName": "all Laminas API Tools packages"},
-    {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "all Mezzio packages"}
+    {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "all Mezzio packages"},
+    {
+        "matchPackageNames": ["php"],
+        "extends": [":automergeDisabled", ":automergePr", ":label(Awaiting Maintainer Response)"],
+        "ignoreUnstable": false,
+        "groupName": "PHP"
+    }
 ]
 ```
 
@@ -154,6 +160,10 @@ newer version is available outside them. Widening the range of a development dep
 
 Although not necessary, this will group updates from each of these organizations into a single update. Combined with the
 rules from above, this will usually only occur for new major releases.
+
+The final package rule should allow renovate to create new PRs to test out new unstable PHP versions as they are
+released, e.g. PHP 8.2.0-rc1. These PRs are not automatically merged, even if all checks are green, and additionally
+they will be assigned the label "Awaiting Maintainer Response".
 
 ## Links
 
