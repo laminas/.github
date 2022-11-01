@@ -1,20 +1,28 @@
 # Renovate
 
-This repository contains the shared configuration for Renovate, a tool to automate dependency updates via a
-`renovate-config.json` file which would be available as a
-[shareable preset](https://docs.renovatebot.com/config-presets/).
+This repository contains the following shared configurations for Renovate, a tool to automate dependency updates which
+would be available as a [shareable preset](https://docs.renovatebot.com/config-presets/).
+- A default `renovate-config.json` file for general use in all repositories.
+- A `renovate-config-security-updates-only.json` file for use in Laminas repositories marked "security-updates-only".
 
-## Goals
+## Default Configuration
 
-This configuration has the following goals for a shared preset:
+By calling the file `renovate-config.json` and placing it in this repository, we can take advantage of Renovate
+detecting this, allowing easy
+[onboarding](https://docs.renovatebot.com/getting-started/installing-onboarding/#repository-onboarding) for
+repositories.
+
+### Goals
+
+The default configuration has the following goals for a shared preset:
 
 - a single PR for anything non-major that doesn't fit the current version constraints. (e.g. coding standards)
 - a PR for any new majors grouped by org.
 - otherwise, the lockfile is updated and automatically merged once tests pass, opening a PR only if those fail.
 
-## Next steps for downstream maintainers
+### Next steps for downstream maintainers
 
-Once the WhiteSource Renovate GitHub app is enabled for a repository, a new `Configure Renovate` PR will be opened
+Once the Mend Renovate GitHub app is enabled for a repository, a new `Configure Renovate` PR will be opened
 containing a basic `renovate.json` file with the following contents:
 
 ```json
@@ -30,13 +38,6 @@ In order to be fully compatible with this Renovate configuration, you must ensur
 2. The lockfile must have been generated using Composer with a version `>=2.2`.
 3. Lastly, for Renovate to detect the correct version of PHP to use for lockfile maintenance, the PHP version must be
    set in `composer.json` under the key [`config.platform.php`](https://getcomposer.org/doc/06-config.md#platform).
-
-## Configuration
-
-By calling the file `renovate-config.json` and placing it in this repository, we can take advantage of Renovate
-detecting this, allowing easy
-[onboarding](https://docs.renovatebot.com/getting-started/installing-onboarding/#repository-onboarding) for
-repositories.
 
 ### Presets
 
@@ -73,7 +74,7 @@ updates of updates by default.
 merge type to be `branch` meaning a PR is only opened on failure.
 - **[:rebaseStalePrs](https://docs.renovatebot.com/presets-default/#rebasestaleprs)** - Any PRs previously opened by
 Renovate will be automatically rebased should they fall behind.
-- **[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled) - Disable semantic
+- **[:semanticCommitsDisabled](https://docs.renovatebot.com/presets-default/#semanticcommitsdisabled)** - Disable semantic
 prefixes for commit messages and PR titles.
 - **[:separateMajorReleases](https://docs.renovatebot.com/presets-default/#separatemajorreleases)** - Any new major
 releases for a package will be separated into its own update.
@@ -166,9 +167,40 @@ The final package rule should allow renovate to create new PRs to test out new u
 released, e.g. PHP 8.2.0-rc1. These PRs are not automatically merged, even if all checks are green, and additionally
 they will be assigned the label "Awaiting Maintainer Response".
 
+## Security Updates Only Configuration
+
+Extending the default, the file `renovate-config-security-updates-only.json` is made specifically for use in Laminas
+repositories that have been marked as receiving "security-updates-only".
+
+### Presets
+
+```json
+"extends": [
+   "local>laminas/.github:renovate-config",
+   ":maintainLockFilesDisabled"
+],
+```
+
+- **local>laminas/.github:renovate-config** - As stated, the first preset extends the default configuration described
+above.
+- **[:maintainLockFilesDisabled](https://docs.renovatebot.com/presets-default/#maintainlockfilesdisabled)** - Only
+update lock files when `composer.json` is updated.
+
+### Package Rules
+
+```json
+"packageRules": [
+   {"matchPackagePatterns": ["*"], "enabled": false},
+   {"matchPackageNames": ["php"], "enabled": true}
+]
+```
+
+The first rule will disable all updates that aren't lockfile maintenance (disabled above) or vulnerability alerts
+(which we want to keep). Then with the second rule, we allow updates again but only for PHP.
+
 ## Links
 
 [Renovate on GitHub](https://github.com/renovatebot/renovate)
 [Renovate Documentation](https://docs.renovatebot.com)
-[WhiteSource Renovate website](https://www.whitesourcesoftware.com/free-developer-tools/renovate/)
-[WhiteSource Renovate GitHub app](https://github.com/marketplace/renovate)
+[Mend Renovate website](https://www.mend.io/free-developer-tools/renovate/)
+[Mend Renovate GitHub app](https://github.com/marketplace/renovate)
