@@ -154,8 +154,9 @@ alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lock
 ```
 
 The first of these package rules will ensure that non-development dependency version constraints are widened when a
-newer version is available outside them. Widening the range of a development dependency makes little sense.
- - `replace` Replace the range with a newer one if the new version falls outside it, and update nothing otherwise.
+newer version is available outside them. Widening the range of a development dependency makes little sense, so the bump
+strategy is used by default to ensure that development dependencies are kept at the most recent possible minor or patch versions.
+ - `bump` Update the range for every release, e.g. `^1.2.3` -> `^1.2.4`.
  - `widen` Widen the range with newer one, e.g. `^1.0.0` -> `^1.0.0 || ^2.0.0`.
 
 Although not necessary, this will group updates from each of these organizations into a single update. Combined with the
