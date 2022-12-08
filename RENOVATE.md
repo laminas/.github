@@ -147,6 +147,7 @@ alerts, enabled by a previous preset, will use a `rangeStrategy` of `update-lock
     {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "all Mezzio packages"},
     {
         "matchPackageNames": ["php"],
+        "allowedVersions": "^8.0"
         "extends": [":automergeDisabled", ":automergePr", ":label(Awaiting Maintainer Response)"],
         "ignoreUnstable": false,
         "groupName": "PHP"
@@ -162,9 +163,13 @@ newer version is available outside them. Widening the range of a development dep
 Although not necessary, this will group updates from each of these organizations into a single update. Combined with the
 rules from above, this will usually only occur for new major releases.
 
-The final package rule should allow renovate to create new PRs to test out new unstable PHP versions as they are
-released, e.g. PHP 8.2.0-rc1. These PRs are not automatically merged, even if all checks are green, and additionally
-they will be assigned the label "Awaiting Maintainer Response".
+The final package rule will allow us to use renovate to automate PHP upgrades. By extending the relevant presets, these
+PRs are not automatically merged, even if all checks are green, and additionally they will be assigned the label
+"Awaiting Maintainer Response". The
+[allowedVersions](https://docs.renovatebot.com/configuration-options/#allowedversions) setting tells renovate which PHP
+versions it's allowed to upgrade to, whilst
+[ignoreUnstable](https://docs.renovatebot.com/configuration-options/#ignoreunstable) allows renovate to propose updates
+for unreleased PHP versions (e.g. 8.2.0-rc1).
 
 ## Security Updates Only Configuration
 
