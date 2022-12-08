@@ -29,6 +29,7 @@
         {"matchPackagePatterns": ["^mezzio/"], "groupSlug": "mezzio", "groupName": "Mezzio packages"},
         {
             "matchPackageNames": ["php"],
+            "allowedVersions": ">=8.0",
             "extends": [":automergeDisabled", ":automergePr", ":label(Awaiting Maintainer Response)"],
             "ignoreUnstable": false,
             "groupName": "PHP"
