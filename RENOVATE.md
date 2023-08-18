@@ -110,7 +110,7 @@ From https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts:
 
 ```json
 "commitBodyTable": true,
-"lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
+"lockFileMaintenance": {"enabled": true, "extends": ["schedule:weekly"]},
 "platformAutomerge": true,
 "prFooter": "[Read more information](https://github.com/laminas/.github/blob/main/RENOVATE.md) about the use of [Renovate Bot](https://github.com/renovatebot/renovate) within Laminas.",
 "rangeStrategy": "replace",
