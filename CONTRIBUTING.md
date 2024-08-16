@@ -9,7 +9,10 @@ If you wish to contribute to this project, please be sure to read/subscribe to t
 - [Chat](https://laminas.dev/chat)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 
-If you are working on new features or refactoring, [create a proposal](./issues/new?labels=RFC&template=RFC.md&title=%5BRFC%5D%3A+%5BTITLE+OF+RFC%5D).
+## New Features or Refactoring
+If you are working on new features or refactoring for an existing project item (e.g. adding a new filter or validator or rewriting an existing class), create a Request For Comments (RFC) in the correspondig repository via a new issue report.
+
+If you want to propose a new component/package, create a RFC in the [Technical Steering Committee](https://github.com/laminas/technical-steering-committee) repository via a new issue report.
 
 ## RUNNING TESTS
 
