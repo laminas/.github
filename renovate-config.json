@@ -14,7 +14,8 @@
         ":timezone(UTC)",
         ":gitSignOff",
         ":label(renovate)",
-        "group:allNonMajor"
+        "group:allNonMajor",
+        "helpers:pinGitHubActionDigests"
     ],
     "commitBodyTable": true,
     "lockFileMaintenance": {"enabled": true, "extends": ["schedule:daily"]},
